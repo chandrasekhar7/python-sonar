@@ -26,6 +26,5 @@ jobs:
       uses: actions/upload-artifact@v4.3.3
       with:
         name: bandit
-        path: ${{ GITHUB_WORKFLOW }}\report.txt
-      
+        path: ./report.txt      
     
