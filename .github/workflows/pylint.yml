@@ -16,3 +16,11 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+    - name: bandit scan
+      if: always()
+      uses: shundor/bandit-action@v1
+      with: 
+        path: "."
+        level: high
+        confidence: high
+        exit_zero: true           
