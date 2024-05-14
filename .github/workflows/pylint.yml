@@ -23,6 +23,7 @@ jobs:
       run: |
         bandit -r . -o report.txt 
     - name: Upload a Build Artifact
+      if: always()
       uses: actions/upload-artifact@v4.3.3
       with:
         name: bandit
