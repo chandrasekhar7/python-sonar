@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: self-hosted
+    env:
+      SUPER_SECRET: ${{ secrets.gh_secret }}
     steps:
     - uses: actions/checkout@v4
     - name: Install dependencies
