@@ -21,4 +21,11 @@ jobs:
     - name: scanning the code with bandit
       if: always()
       run: |
-        bandit -r . -o report.txt      
+        bandit -r . -o report.txt 
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v4.3.3
+      with:
+        name: bandit
+        path: ${{ GITHUB_WORKFLOW }}\report.txt
+      
+    
