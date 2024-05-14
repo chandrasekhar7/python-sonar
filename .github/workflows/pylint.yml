@@ -19,4 +19,5 @@ jobs:
       run: |
         pylint $(git ls-files '*.py')
     - name: scanning the code with bandit
+      run: |
         bandit -r . -o report.txt      
