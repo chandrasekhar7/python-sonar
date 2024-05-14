@@ -18,12 +18,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
-    - name: bandit scan
-      if: always()
-      uses: mdegis/bandit-action@v1.0
-      with:
-        SUPER_SECRET: ${{ secrets.gh_secret }}
-        path: "."
-        level: high
-        confidence: high
-        exit_zero: true           
+        bandit -r . -o report.txt      
