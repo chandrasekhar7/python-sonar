@@ -20,8 +20,9 @@ jobs:
         pylint $(git ls-files '*.py')
     - name: bandit scan
       if: always()
-      uses: shundor/bandit-action@v1
-      with: 
+      uses: mdegis/bandit-action@v1.0
+      with:
+        SUPER_SECRET: ${{ secrets.gh_secret }}
         path: "."
         level: high
         confidence: high
